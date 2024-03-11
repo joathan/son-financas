@@ -11,5 +11,7 @@
             "email": "joathanf@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "robmorgan/phinx": "0.7.1"
+    }
 }
