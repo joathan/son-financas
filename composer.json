@@ -1,0 +1,15 @@
+{
+    "name": "joathan/son-financas",
+    "autoload": {
+        "psr-4": {
+            "SONFin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joathan Souza",
+            "email": "joathanf@gmail.com"
+        }
+    ],
+    "require": {}
+}
