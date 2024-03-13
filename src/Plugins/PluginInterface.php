@@ -1,6 +1,6 @@
 <?php
 
-namespace SONFin;
+namespace SONFin\Plugins;
 
 use SONFin\ServiceContainerInterface;
 

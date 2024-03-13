@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace SONFin;
 
+use SONFin\Plugins\PluginInterface;
+
 class Application
 {
     private $serviceContainer;
