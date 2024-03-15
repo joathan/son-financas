@@ -2,11 +2,9 @@
 declare(strict_types=1);
 namespace SONFin\Plugins;
 
-use Aura\Router\RouterContainer;
 use Interop\Container\ContainerInterface;
-use Psr\Http\Message\RequestInterface;
 use SONFin\ServiceContainerInterface;
-use Zend\Diactoros\ServerRequestFactory;
+use SONFin\View\ViewRenderer;
 
 class ViewPlugin implements PluginInterface
 {
@@ -16,6 +14,11 @@ class ViewPlugin implements PluginInterface
             $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../templates');
             $twig = new \Twig_Environment($loader);
             return $twig;
+        });
+
+        $container->addLazy('view.renderer', function (ContainerInterface $container) {
+            $twigEnvironment = $container->get('twig');
+            return new ViewRenderer($twigEnvironment);
         });
     }
 }
