@@ -3,7 +3,9 @@ declare(strict_types=1);
 namespace SONFin;
 
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use SONFin\Plugins\PluginInterface;
+use Zend\Diactoros\Response\SapiEmitter;
 
 class Application
 {
@@ -55,6 +57,13 @@ class Application
       }
 
       $callable = $route->handler;
-      $callable($request);
+      $response = $callable($request);
+      $this->emiResponse($response);
+    }
+
+    protected function emiResponse(ResponseInterface $response)
+    {
+      $emitter = new SapiEmitter();
+      $emitter->emit($response);
     }
 }

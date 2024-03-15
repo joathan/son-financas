@@ -20,9 +20,9 @@ $app->get('/',
 
 $app->get('/home/{nome}',
     function (ServerRequestInterface $request) {
-        echo "Mostrando a home";
-        echo "<br>";
-        echo $request->getAttribute('nome');
+        $response = new \Zend\Diactoros\Response();
+        $response->getBody()->write('Response com emmiter do diactoros');
+        return $response;
     }
 );
 
