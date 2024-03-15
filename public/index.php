@@ -14,10 +14,10 @@ $app = new Application($serviceContainer);
 $app->plugin(new RoutePlugin());
 $app->plugin(new ViewPlugin());
 
-$app->get('/',
+$app->get('/{name}',
     function (ServerRequestInterface $request) use ($app){
         $view = $app->service('view.renderer');
-        return $view->render('teste.html.twig', ['name' => 'Joathan']);
+        return $view->render('teste.html.twig', ['name' => $request->getAttribute('name')]);
     }
 );
 
