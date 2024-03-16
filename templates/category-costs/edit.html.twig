@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Editando Categoria de Custo</h3>
+    <a href="#" class="btn btn-primary">Nova Categoria</a>
+    <form action="{{ route('category-costs.update', {'id': category.id}) }}" method="post">
+        <div class="form-group">
+            <label class="control-label" for="name">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nome da Categoria" value="{{ category.name }}">
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Salvar
+        </button>
+</div>
+{% endblock %}
