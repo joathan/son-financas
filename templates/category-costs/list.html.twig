@@ -13,15 +13,17 @@
             </tr>
         </thead>
         <tbody>
+            {% for category in categories %}
             <tr>
-                <td></td>
-                <td></td>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
                 <td>
                     <a href="#" class="btn btn-default">Editar</a>
                     |
                     <a href="#" class="btn btn-danger">Remover</a>
                 </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
