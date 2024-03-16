@@ -34,7 +34,7 @@ $app
         return $view->render('category-costs/list.html.twig', [
             'categories' => $categories
         ]);
-    })
+    }, 'category-costs.list')
     ->get('/category-costs/new', function () use ($app) {
         $view = $app->service('view.renderer');
         return $view->render('category-costs/create.html.twig');
@@ -42,7 +42,7 @@ $app
     ->post('/category-costs/store', function (ServerRequestInterface $request) use ($app) {
         $data = $request->getParsedBody();
         CategoryCost::create($data);
-        return $app->redirect('/category-costs');
+        return $app->route('category-costs.list');
     }, 'category-costs.store');
 
 $app->start();
