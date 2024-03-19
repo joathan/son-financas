@@ -4,14 +4,8 @@
 <div class="container">
     <h3>Nova Categoria de Custo</h3>
     <a href="#" class="btn btn-primary">Nova Categoria</a>
-    <form action="{{ route('category-costs.store') }}" method="post">
-        <div class="form-group">
-            <label class="control-label" for="name">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nome da Categoria">
-        </div>
-        <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-floppy-disk"></span>
-            Salvar
-        </button>
+    {% set action = route('category-costs.store') %}
+    {% set submitIcon = 'floppy-disk' %}
+    {% include "category-costs/_form.html.twig" %}
 </div>
 {% endblock %}
