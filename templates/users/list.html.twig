@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Categoria de Custo</h3>
+    <a href="{{ route('users.new') }}" class="btn btn-primary">Novo Usuário</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.first_name ~ ' ' ~ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ route('users.edit', {'id': user.id}) }}" class="btn btn-default">Editar</a>
+                    |
+                    <a href="{{ route('users.show', {'id': user.id}) }}" class="btn btn-danger">Remover</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

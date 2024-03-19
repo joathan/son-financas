@@ -27,5 +27,6 @@ $app->get(
 );
 
 require_once __DIR__ .'./../src/Controllers/category-costs.php';
+require_once __DIR__ .'./../src/Controllers/users.php';
 
 $app->start();

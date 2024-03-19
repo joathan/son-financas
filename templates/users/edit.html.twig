@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Editando Usuário</h3>
+    <a href="#" class="btn btn-primary">Novo usuário</a>
+    {% set action = route('users.update', {'id': user.id}) %}
+    {% set submitIcon = 'pencil' %}
+    {% include "users/_form.html.twig" %}
+</div>
+{% endblock %}
