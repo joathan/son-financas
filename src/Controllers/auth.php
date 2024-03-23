@@ -7,6 +7,10 @@ $app
     $view = $app->service('view.renderer');
     return $view->render('auth/login.html.twig');
   }, 'auth.show_login_form')
+  ->get('/logout', function () use ($app) {
+    $app->service('auth')->logout();
+    return $app->route('auth.show_login_form');
+  }, 'auth.logout')
   ->post('/login', function (ServerRequestInterface $request) use ($app) {
     $view = $app->service('view.renderer');
     $auth = $app->service('auth');
