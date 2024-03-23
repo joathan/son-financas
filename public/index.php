@@ -2,7 +2,7 @@
 
 use Psr\Http\Message\ServerRequestInterface;
 use SONFin\Application;
-use SONFin\Models\CategoryCost;
+use SONFin\Plugins\AuthPlugin;
 use SONFin\Plugins\RoutePlugin;
 use SONFin\Plugins\ViewPlugin;
 use SONFin\Plugins\DbPlugin;
@@ -16,6 +16,7 @@ $app = new Application($serviceContainer);
 $app->plugin(new RoutePlugin());
 $app->plugin(new ViewPlugin());
 $app->plugin(new DbPlugin());
+$app->plugin(new AuthPlugin());
 
 $app->get(
     '/home/{nome}',
@@ -28,5 +29,6 @@ $app->get(
 
 require_once __DIR__ .'./../src/Controllers/category-costs.php';
 require_once __DIR__ .'./../src/Controllers/users.php';
+require_once __DIR__ .'./../src/Controllers/auth.php';
 
 $app->start();

@@ -14,6 +14,9 @@ class UsersSeeder extends AbstractSeed
      */
     public function run()
     {
+        $app = require __DIR__ . "/../bootstrap.php";
+        $auth = $app->service('auth');
+
         $faker = \Faker\Factory::create('pt_BR');
         $users = $this->table('users');
         $users->insert(
@@ -21,7 +24,7 @@ class UsersSeeder extends AbstractSeed
                 'first_name' => 'Joathan',
                 'last_name' => 'Sozua',
                 'email' => 'admin@joathan.com.br',
-                'password' => '123456',
+                'password' => $auth->hashPassword('123456'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]
@@ -33,7 +36,7 @@ class UsersSeeder extends AbstractSeed
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
                 'email' => $faker->unique()->email,
-                'password'=> '123456',
+                'password'=> $auth->hashPassword('123456'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ];
