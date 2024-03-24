@@ -21,7 +21,8 @@
         "jasny/auth": "1.0.1"
     },
     "require-dev": {
-        "fzaninotto/faker": "1.6.0"
+        "fzaninotto/faker": "1.6.0",
+        "phpstan/phpstan": "^1.4"
     },
     "config": {
         "allow-plugins": {
