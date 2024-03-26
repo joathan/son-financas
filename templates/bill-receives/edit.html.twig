@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Editar Conta a receber</h3>
+    <a href="#" class="btn btn-primary">Nova conta a pagar</a>
+    {% set action = route('bill-receives.update', {'id': bill.id}) %}
+    {% set submitIcon = 'pencil' %}
+    {% include "bill-receives/_form.html.twig" %}
+</div>
+{% endblock %}

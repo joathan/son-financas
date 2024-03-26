@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Nova conta a receber</h3>
+    <a href="#" class="btn btn-primary">Novo Lançamento</a>
+    {% set action = route('bill-receives.store') %}
+    {% set submitIcon = 'floppy-disk' %}
+    {% include "bill-receives/_form.html.twig" %}
+</div>
+{% endblock %}

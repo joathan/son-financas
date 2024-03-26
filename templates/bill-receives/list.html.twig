@@ -1,0 +1,34 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <h3>Administração de contas a receber</h3>
+    <a href="{{ route('bill-receives.new') }}" class="btn btn-primary">Nova conta a receber</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Data Lanc.</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bill in bills %}
+            <tr>
+                <td>{{ bill.id }}</td>
+                <td>{{ bill.date_launch | date('d/m/Y') }}</td>
+                <td>{{ bill.name }}</td>
+                <td>{{ bill.value | number_format(2,',','.') }}</td>
+                <td>
+                    <a href="{{ route('bill-receives.edit', {'id': bill.id}) }}" class="btn btn-default">Editar</a>
+                    |
+                    <a href="{{ route('bill-receives.show', {'id': bill.id}) }}" class="btn btn-danger">Remover</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
