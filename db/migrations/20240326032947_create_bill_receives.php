@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateBillReceive extends AbstractMigration
+class CreateBillReceives extends AbstractMigration
 {
     /**
      * Change Method.
