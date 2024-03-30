@@ -7,12 +7,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
+<style>
+    .flag-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flag-container img {
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .flag-container img:hover {
+        opacity: 0.8;
+    }
+</style>
+
 <body>
     {% if Auth.check() %}
     <nav class="navbar navbar-default navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
@@ -20,7 +36,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
                 <a class="navbar-brand" href="#">
                     SON Finanças
                 </a>
@@ -28,15 +43,19 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Categoria de Custo</a></li>
+                    <li>
+                        <a href="{{ route('category-costs.list') }}">
+                            {{ 'views.category_cost.title'|trans }}
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">
                             Contas <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Contas a pagar</a></li>
-                            <li><a href="#">Contas a receber</a></li>
+                            <li><a href="{{ route('bill-pays.list') }}">Contas a pagar</a></li>
+                            <li><a href="{{ route('bill-receives.list') }}">Contas a receber</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Extrato</a></li>
@@ -49,12 +68,49 @@
                     <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                 </ul>
             </div>
+
         </div>
+        <form id="locale-form" action="/set-locale" method="post">
+            <input type="hidden" name="locale" id="locale-input">
+            <div class="flag-container">
+                <img
+                    src="/images/united_states.png"
+                    alt="English"
+                    height="24"
+                    width="24"
+                    title="English"
+                    data-locale="en">
+                <img
+                    src="/images/spain.png"
+                    alt="Español"
+                    height="24"
+                    width="24"
+                    title="Español"
+                    data-locale="es">
+                <img
+                    src="/images/brasil.png"
+                    alt="Português (Brasil)"
+                    height="24"
+                    width="24"
+                    title="Português (Brasil)"
+                    data-locale="pt_BR">
+            </div>
+        </form>
     </nav>
     {% endif %}
     {% block content %}{% endblock %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('.flag-container img').forEach(function (flag) {
+            flag.addEventListener('click', function () {
+                var locale = this.getAttribute('data-locale');
+                document.getElementById('locale-input').value = locale;
+                document.getElementById('locale-form').submit();
+            });
+        });
+
+    </script>
 </body>
 
 </html>
