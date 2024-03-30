@@ -1,0 +1,57 @@
+model:
+  category_cost:
+    name: 'Nome'
+    user_id: 'Usuário'
+  user:
+    name: 'Nome'
+    password: 'Senha'
+    email: 'E-mail'
+  bill_receive:
+    date_launch: 'Data de lançamento'
+    name: 'Nome'
+    value: 'Valor'
+    user_id: 'Usuário'
+  bill_pay:
+    date_launch: 'Data de lançamento'
+    name: 'Nome'
+    value: 'Valor'
+    user_id: 'Usuário'
+    category_id: 'Categoria'
+
+views:
+  login:
+    title: 'Entrar'
+    email: 'E-mail'
+    password: 'Senha'
+    button:
+      login: 'Entrar'
+    message:
+      error: 'E-mail ou senha incorretos'
+      success: 'Login efetuado com sucesso'
+
+  category_cost:
+    title: 'Categoria de custo'
+    new: 
+      title: 'Nova categoria de custo'
+    edit: 
+      title: 'Editar categoria de custo'
+    attributes:
+      name: 'Nome'
+      user_id: 'Usuário'
+      actions: 'Ações'
+    placeholder:
+      name: 'Digite o nome'
+    button:
+      new: 'Nova categoria de custo'
+      edit: 'Editar'
+      delete: 'Excluir'
+      save: 'Salvar'
+
+buttons:
+  new: 'Novo'
+  edit: 'Editar'
+  delete: 'Excluir'
+  save: 'Salvar'
+  cancel: 'Cancelar'
+  back: 'Voltar'
+  login: 'Entrar'

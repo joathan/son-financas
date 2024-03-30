@@ -2,14 +2,16 @@
 
 {% block content %}
 <div class="container">
-    <h3>Categoria de Custo</h3>
-    <a href="{{ route('category-costs.new') }}" class="btn btn-primary">Nova Categoria</a>
+    <h3>{{ 'views.category_cost.title'|trans }}</h3>
+    <a href="{{ route('category-costs.new') }}" class="btn btn-primary">
+        {{ 'views.category_cost.button.new'|trans }}
+    </a>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nome</th>
-                <th>Ação</th>
+                <th>{{ 'views.category_cost.attributes.name'|trans }}</th>
+                <th>{{ 'views.category_cost.attributes.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -18,9 +20,13 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>
-                    <a href="{{ route('category-costs.edit', {'id': category.id}) }}" class="btn btn-default">Editar</a>
+                    <a href="{{ route('category-costs.edit', {'id': category.id}) }}" class="btn btn-default">
+                        {{ 'views.category_cost.button.edit'|trans }}
+                    </a>
                     |
-                    <a href="{{ route('category-costs.show', {'id': category.id}) }}" class="btn btn-danger">Remover</a>
+                    <a href="{{ route('category-costs.show', {'id': category.id}) }}" class="btn btn-danger">
+                        {{ 'views.category_cost.button.delete'|trans }}
+                    </a>
                 </td>
             </tr>
             {% endfor %}

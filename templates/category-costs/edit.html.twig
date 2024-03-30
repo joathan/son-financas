@@ -2,8 +2,12 @@
 
 {% block content %}
 <div class="container">
-    <h3>Editando Categoria de Custo</h3>
-    <a href="#" class="btn btn-primary">Nova Categoria</a>
+    <h3>
+        {{ 'views.category_cost.edit.title'|trans }}
+    </h3>
+    <a href="#" class="btn btn-primary">
+        {{ 'views.category_cost.button.new'|trans }}
+    </a>
     {% set action = route('category-costs.update', {'id': category.id}) %}
     {% set submitIcon = 'pencil' %}
     {% include "category-costs/_form.html.twig" %}

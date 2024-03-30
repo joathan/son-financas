@@ -1,0 +1,56 @@
+model:
+  category_cost:
+    name: 'Name'
+    user_id: 'User'
+  user:
+    name: 'Name'
+    password: 'Password'
+    email: 'Email'
+  bill_receive:
+    date_launch: 'Date launch'
+    name: 'Name'
+    value: 'Value'
+    user_id: 'User'
+  bill_pay:
+    date_launch: 'Date launch'
+    name: 'Name'
+    value: 'Value'
+    user_id: 'User'
+    category_id: 'Category'
+views:
+  login:
+    title: 'Login'
+    email: 'Email'
+    password: 'Password'
+    button:
+      login: 'Login'
+    message:
+      error: 'Incorrect email or password'
+      success: 'Successful login'
+
+  category_cost:
+    title: 'Category cost'
+    new: 
+      title: 'New category cost'
+    edit: 
+      title: 'Edit category cost'
+    attributes:
+      name: 'Name'
+      user_id: 'User'
+      actions: 'Actions'
+    placeholder:
+      name: 'Enter the name'
+    button:
+      new: 'New category cost'
+      edit: 'Edit'
+      delete: 'Delete'
+      save: 'Save'
+
+buttons:
+  new: 'New'
+  edit: 'Edit'
+  delete: 'Delete'
+  save: 'Save'
+  cancel: 'Cancel'
+  back: 'Back'
+  login: 'Login'

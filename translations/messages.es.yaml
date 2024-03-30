@@ -1,0 +1,57 @@
+model:
+  category_cost:
+    name: 'Nombre'
+    user_id: 'Usuario'
+  user:
+    name: 'Nombre'
+    password: 'Contraseña'
+    email: 'Correo electrónico'
+  bill_receive:
+    date_launch: 'Fecha de lanzamiento'
+    name: 'Nombre'
+    value: 'Valor'
+    user_id: 'Usuario'
+  bill_pay:
+    date_launch: 'Fecha de lanzamiento'
+    name: 'Nombre'
+    value: 'Valor'
+    user_id: 'Usuario'
+    category_id: 'Categoría'
+
+views:
+  login:
+    title: 'Iniciar sesión'
+    email: 'Correo electrónico'
+    password: 'Contraseña'
+    button:
+      login: 'Iniciar sesión'
+    message:
+      error: 'Correo electrónico o contraseña incorrectos'
+      success: 'Inicio de sesión exitoso'
+
+  category_cost:
+    title: 'Categoría de costo'
+    new: 
+      title: 'Nueva categoría de costo'
+    edit: 
+      title: 'Editar categoría de costo'
+    attributes:
+      name: 'Nombre'
+      user_id: 'Usuario'
+      actions: 'Acciones'
+    placeholder:
+      name: 'Ingrese el nombre'
+    button:
+      new: 'Nuevo categoría de costo'
+      edit: 'Editar'
+      delete: 'Eliminar'
+      save: 'Guardar'
+
+buttons:
+  new: 'Nuevo'
+  edit: 'Editar'
+  delete: 'Eliminar'
+  save: 'Guardar'
+  cancel: 'Cancelar'
+  back: 'Volver'
+  login: 'Iniciar sesión'
