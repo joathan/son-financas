@@ -30,6 +30,7 @@ $app->get(
 
 require_once __DIR__ .'./../src/Controllers/category-costs.php';
 require_once __DIR__ .'./../src/Controllers/bill-receives.php';
+require_once __DIR__ .'./../src/Controllers/bill-pays.php';
 require_once __DIR__ .'./../src/Controllers/users.php';
 require_once __DIR__ .'./../src/Controllers/auth.php';
 
