@@ -1,22 +1,3 @@
-model:
-  category_cost:
-    name: 'Name'
-    user_id: 'User'
-  user:
-    name: 'Name'
-    password: 'Password'
-    email: 'Email'
-  bill_receive:
-    date_launch: 'Date launch'
-    name: 'Name'
-    value: 'Value'
-    user_id: 'User'
-  bill_pay:
-    date_launch: 'Date launch'
-    name: 'Name'
-    value: 'Value'
-    user_id: 'User'
-    category_id: 'Category'
 views:
   login:
     title: 'Login'
