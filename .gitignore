@@ -1,3 +1,4 @@
 /vendor
 docker-compose.override.yml
 logs/php_errors.log
+.DS_Store
