@@ -22,10 +22,10 @@ class ViewPlugin implements PluginInterface
                 'debug' => true,
             ]);
 
-            $translator = new Translator('es');
+            $translator = new Translator('pt_BR');
             $translator->addLoader('yaml', new YamlFileLoader());
 
-            $locale = $_SESSION['locale'] ?? 'es';
+            $locale = $_SESSION['locale'] ?? 'pt_BR';
             $translator->setLocale($locale);
 
             $translator->addResource('yaml', __DIR__ . '/../../translations/messages.en.yaml', 'en');
