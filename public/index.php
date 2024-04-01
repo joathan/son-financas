@@ -54,6 +54,11 @@ $app->get('/images/{filename}', function ($request) {
     }
 });
 
+$app->get('/', function () use ($app) {
+    $view = $app->service('view.renderer');
+    return $view->render('dashboard.html.twig');
+}, 'home');
+
 require_once __DIR__ .'./../src/Controllers/category-costs.php';
 require_once __DIR__ .'./../src/Controllers/bill-receives.php';
 require_once __DIR__ .'./../src/Controllers/bill-pays.php';
