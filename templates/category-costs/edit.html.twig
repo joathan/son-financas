@@ -2,14 +2,39 @@
 
 {% block content %}
 <div class="container">
-    <h3>
-        {{ 'views.category_cost.edit.title'|trans }}
-    </h3>
-    <a href="#" class="btn btn-primary">
-        {{ 'views.category_cost.button.new'|trans }}
-    </a>
+    <div class="d-flex justify-content-between mt-5 mb-2">
+        <div>
+            <h3 class="text-uppercase">
+                {{ 'views.category_cost.edit.title'|trans }}
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('home') }}">
+                            {{ 'home'|trans }}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="{{ route('category-costs.list') }}">
+                            {{ 'views.category_cost.breadcrumbs.index'|trans }}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        {{ 'views.category_cost.breadcrumbs.edit'|trans }}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div>
+            <a href="{{ route('category-costs.new') }}" class="btn btn-primary">
+                {{ 'views.category_cost.button.new'|trans }}
+            </a>
+        </div>
+    </div>
+
     {% set action = route('category-costs.update', {'id': category.id}) %}
-    {% set submitIcon = 'pencil' %}
+    {% set submitIcon = 'arrow-repeat' %}
+    {% set submitLabel = 'views.category_cost.button.update'|trans %}  
     {% include "category-costs/_form.html.twig" %}
 </div>
 {% endblock %}

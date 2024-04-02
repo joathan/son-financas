@@ -1,3 +1,4 @@
+title: 'Finanzas'
 views:
   login:
     title: 'Iniciar sesión'
@@ -11,6 +12,7 @@ views:
 
   category_cost:
     title: 'Categoría de costo'
+    breadcrumb: 'Categorías'
     new: 
       title: 'Nueva categoría de costo'
     edit: 
@@ -35,3 +37,10 @@ buttons:
   cancel: 'Cancelar'
   back: 'Volver'
   login: 'Iniciar sesión'
+
+modal:
+  title: 'Confirmación'
+  message: '¿Estás seguro de que deseas eliminar este registro?'
+  button:
+    confirm: 'Confirmar'
+    cancel: 'Cancelar'

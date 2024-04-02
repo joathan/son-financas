@@ -2,12 +2,34 @@
 
 {% block content %}
 <div class="container">
-    <h3>{{ 'views.category_cost.new.title'|trans }}</h3>
-    <a href="{{ route('category-costs.list') }}" class="btn btn-primary">
-        {{ 'views.buttons.back'|trans }}
-    </a>
+    <div class="d-flex justify-content-between mt-5 mb-2">
+        <div>
+            <h3 class="text-uppercase">
+                {{ 'views.category_cost.new.title'|trans }}
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('home') }}">
+                            {{ 'home'|trans }}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="{{ route('category-costs.list') }}">
+                            {{ 'views.category_cost.breadcrumbs.index'|trans }}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        {{ 'views.category_cost.breadcrumbs.new'|trans }}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
     {% set action = route('category-costs.store') %}
-    {% set submitIcon = 'floppy-disk' %}
+    {% set submitIcon = 'floppy' %}
+    {% set submitLabel = 'views.category_cost.button.save'|trans %}
     {% include "category-costs/_form.html.twig" %}
 </div>
 {% endblock %}

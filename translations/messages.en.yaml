@@ -1,3 +1,4 @@
+title: 'Finance'
 views:
   login:
     title: 'Login'
@@ -11,6 +12,7 @@ views:
 
   category_cost:
     title: 'Category cost'
+    breadcrumb: 'Categories'
     new: 
       title: 'New category cost'
     edit: 
@@ -35,3 +37,10 @@ buttons:
   cancel: 'Cancel'
   back: 'Back'
   login: 'Login'
+
+modal:
+  title: 'Confirmation'
+  message: 'Are you sure you want to delete this record?'
+  button:
+    confirm: 'Confirm'
+    cancel: 'Cancel'

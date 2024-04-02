@@ -1,3 +1,5 @@
+home: 'Início'
+title: 'Finanças'
 views:
   login:
     title: 'Entrar'
@@ -12,9 +14,15 @@ views:
   category_cost:
     title: 'Categoria de custo'
     new: 
-      title: 'Nova categoria de custo'
+      title: 'Criando categoria de custo'
     edit: 
-      title: 'Editar categoria de custo'
+      title: 'Editando categoria de custo'
+    show: 
+      title: 'Detalhes da categoria de custo'
+    breadcrumbs:
+      index: 'Categorias'
+      new: 'Nova categoria de custo'
+      edit: 'Editando categoria de custo'
     attributes:
       name: 'Nome'
       user_id: 'Usuário'
@@ -26,6 +34,7 @@ views:
       edit: 'Editar'
       delete: 'Excluir'
       save: 'Salvar'
+      update: 'Atualizar'
 
 buttons:
   new: 'Novo'
@@ -35,3 +44,10 @@ buttons:
   cancel: 'Cancelar'
   back: 'Voltar'
   login: 'Entrar'
+
+modal:
+  title: 'Confirmação'
+  message: 'Você tem certeza que deseja excluir este registro?'
+  button:
+    confirm: 'Confirmar'
+    cancel: 'Cancelar'
